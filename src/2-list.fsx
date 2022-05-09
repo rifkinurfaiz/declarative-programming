@@ -26,3 +26,7 @@ let rec dropFirstNList = function
 let rec takeFirstNList = function
     | (xs, 0) -> []
     | (x::xs, n) -> x :: takeFirstNList(xs, n-1);;
+
+let rec search = function
+    | (n, []) -> false
+    | (n, x::xs) -> if n = x then true else search(n, xs);;
